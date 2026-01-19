@@ -1,0 +1,113 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Live Notification - Polling</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 40px;
+        }
+        #notification {
+            background: #f2f2f2;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Live Notification System (Polling)</h2>
+
+<div id="notification">Waiting for notification...</div>
+
+<script>
+    function fetchNotification() {
+        fetch('/get_notification')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("notification").innerText = data.message;
+            });
+    }
+
+    // Call server every 5 seconds
+    setInterval(fetchNotification, 3000);
+
+    // Initial call
+    fetchNotification();
+</script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Notification - Polling</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 45px;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        #notification {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            min-height: 40px;
+        }
+
+        .status {
+            margin-top: 10px;
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Live Notification System (Polling)</h2>
+
+    <div id="notification">Waiting for notification...</div>
+
+    <div class="status">Checking every 3 seconds...</div>
+</div>
+
+<script>
+    function fetchNotification() {
+        fetch('/get_notification')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("notification").innerText = data.message;
+            });
+    }
+
+    // Poll every 3 seconds
+    setInterval(fetchNotification, 3000);
+
+    fetchNotification();
+</script>
+
+</body>
+</html>

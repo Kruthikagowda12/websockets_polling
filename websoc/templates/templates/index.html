@@ -1,0 +1,67 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Live Chat - WebSocket</title>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+
+<h2>Live Chat Application (WebSocket)</h2>
+
+<input id="message" type="text" placeholder="Type a message">
+<button onclick="sendMessage()">Send</button>
+
+<ul id="messages"></ul>
+
+<script>
+    var socket = io(); // Create WebSocket connection
+
+    function sendMessage() {
+        var msg = document.getElementById("message").value;
+        socket.send(msg);   // Send message to server
+        document.getElementById("message").value = "";
+    }
+
+    socket.on("message", function(msg) {
+        var li = document.createElement("li");
+        li.innerText = msg;
+        document.getElementById("messages").appendChild(li);
+    });
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Chat - WebSocket</title>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+
+<h2>Live Chat Application (WebSocket)</h2>
+
+<input id="message" type="text" placeholder="Type a message">
+<button onclick="sendMessage()">Send</button>
+
+<ul id="messages"></ul>
+
+<script>
+    var socket = io(); // Create WebSocket connection
+
+    function sendMessage() {
+        var msg = document.getElementById("message").value;
+        socket.send(msg);   // Send message to server
+        document.getElementById("message").value = "";
+    }
+
+    socket.on("message", function(msg) {
+        var li = document.createElement("li");
+        li.innerText = msg;
+        document.getElementById("messages").appendChild(li);
+    });
+</script>
+
+</body>
+</html>
